@@ -1,3 +1,3 @@
 Portfolio::Application.routes.draw do
-  root "home#index"
+  root "welcome#index"
 end
