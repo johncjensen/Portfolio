@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	color: #38343E;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #BDC3C7;
+}
+
+body{
+	z-index: 2;
+	font-family: 'OpenSans', sans-serif;
+	background: url('bg-web.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #34495e;
+	color: #38343E;
+}
+
+p{
+	font-family: 'OpenSans', sans-serif;
+}
+
+.container{
+	z-index: 99;
+	position: relative;
+}
+
+
+::selection {
+	background: #EA4C89; /* Safari */
+	}
+::-moz-selection {
+	background: #EA4C89; /* Firefox */
+}
+
+header{
+	margin-top: 75px;
+	margin-bottom: 75px;
+}
+
+.logo p{
+
+	font-size: 52px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 100;
+}
+	.logo span{
+		font-weight: bold;
+	}
+
+.socials{
+	text-align: right;
+}
+	.socials a{
+		margin-right: 10px;
+
+	}
+.slogan{
+	margin-bottom: 75px;	
+}
+	.slogan span{
+		display: inline;
+		background-color: #bdc3c7;
+		font-weight: bold;
+		font-size: 24px;
+		color: #38343e;
+		line-height: 32px;
+
+		-webkit-transition: .3s linear;
+		-moz-transition: .3s linear;
+		-o-transition: .3s linear;
+		transition: .3s linear;
+	}
+
+	.sites{
+	margin-bottom: 75px;
+}
+	.sites span{
+		display: inline;
+		background-color: HSLA(264.00, 8.77%, 22.35%, 1.00);
+		font-weight: bold;
+		font-size: 24px;
+		color: HSLA(206.25, 8.08%, 61.18%, 1.00);
+		line-height: 32px;
+
+
+		-webkit-transition: .3s linear;
+		-moz-transition: .3s linear;
+		-o-transition: .3s linear;
+		transition: .3s linear;
+	}
+
+.description{
+	margin-bottom: 50px;
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media (max-width: 979px) {
+	body {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.container{
+	  	padding-right: 20px;
+	    padding-left: 20px;	
+	}
+}
+
+@media (min-width: 979px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 978px) {
+
+} 
+
+@media (max-width: 767px){
+	header{
+		margin-top: 35px;
+		margin-bottom: 15px;
+	}
+
+	.slogan{
+		margin-bottom: 20px;
+	}
+
+	.description{
+		margin-bottom: 20px;
+	}
+
+}
+
+@media (max-width: 767px) and (min-width: 480px){
+	
+}
+
+@media (max-width: 480px) {
+/* Styles */
+	.socials{
+		margin-top: 25px;
+	}
+
+	.slogan span {
+		font-size: 18px;
+		line-height: 26px;
+	}
+}
