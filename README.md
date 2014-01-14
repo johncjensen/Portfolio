@@ -1,3 +1,3 @@
 
 
-![ScreenShot](https://www.dropbox.com/s/r2on77vgpzw2qyd/Screenshot%202014-01-14%2015.11.03.png)
+![ScreenShot](http://f.cl.ly/items/3v3x3o2L1g1h202O3Z34/Screenshot%202014-01-14%2015.11.03.png)
