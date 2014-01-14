@@ -9,5 +9,28 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require furatto
+ *= require_tree.
  */
+
+ html { 
+  background:url('cat.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#container {
+	text-align: left;
+	color: #f6f6f6;
+	font-family: helvetica;
+	font-weight: 300;
+}
+
+a {
+	color: #f6f6f6;
+	text-decoration: none;
+	font-size: 22px;
+	background-color: #9b59b6;
+	padding: 10px;
+}
