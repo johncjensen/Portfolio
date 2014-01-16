@@ -75,7 +75,7 @@ header{
 
 	}
 .slogan{
-	margin-bottom: 75px;	
+	margin-bottom: 75px;
 }
 	.slogan span{
 		display: inline;
@@ -113,6 +113,18 @@ header{
 	margin-bottom: 50px;
 }
 
+.blog {
+	background:white;
+  background:rgba(255,255,255,0.29);
+  padding: 0 30px;
+}
+
+.blog-body {
+	font-size: 24px;
+	line-height: 30px;
+
+}
+
 /* iPads (portrait and landscape) ----------- */
 @media (max-width: 979px) {
 	body {
@@ -121,7 +133,7 @@ header{
 	}
 	.container{
 	  	padding-right: 20px;
-	    padding-left: 20px;	
+	    padding-left: 20px;
 	}
 }
 
@@ -131,7 +143,7 @@ header{
 
 @media (min-width: 768px) and (max-width: 978px) {
 
-} 
+}
 
 @media (max-width: 767px){
 	header{
@@ -150,7 +162,7 @@ header{
 }
 
 @media (max-width: 767px) and (min-width: 480px){
-	
+
 }
 
 @media (max-width: 480px) {

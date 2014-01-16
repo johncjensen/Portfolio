@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :test do
 	gem 'minitest-rails-capybara', '0.10.0'
+  gem 'launchy'
 end
 group :doc do
   gem 'sdoc', require: false

@@ -1,8 +1,8 @@
 require "test_helper"
 
-class StaticHomePageTest < Capybara::Rails::TestCase
-  test "sanity" do
+feature "can access home" do
+  scenario "has content" do
     visit root_path
-    assert_content page, "Jensen"
+    assert page.has_content?("Jensen")
   end
 end
