@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails',  github: 'codefellows/foundation-rails'
 
 group :production do
-  gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor'
 end
 
 group :test do
