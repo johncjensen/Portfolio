@@ -9,14 +9,15 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require foundation_and_overrides
  *= require bootstrap
  *= require bootstrap-responsive
  *= require style
  *= require font-awesome.min
  */
 
-/* html { 
-  background:url('cat.jpg') no-repeat center center fixed; 
+/* html {
+  background:url('cat.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
