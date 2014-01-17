@@ -6,13 +6,17 @@ gem 'jquery-rails', '3.0.4'
 gem 'minitest-rails', '0.9.2'
 gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
-gem 'sqlite3', '1.3.8'
 gem 'turbolinks', '2.2.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails',  github: 'codefellows/foundation-rails'
 
+group :development do
+  gem 'sqlite3', '1.3.8'
+end
+
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
 
 group :test do
