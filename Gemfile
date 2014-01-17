@@ -16,13 +16,14 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
+  gem 'pg','0.17.1'
 end
 
 group :test do
   gem 'turn'
 	gem 'minitest-rails-capybara', '0.10.0'
   gem 'launchy'
+  gem 'sqlite3', '1.3.8'
 end
 group :doc do
   gem 'sdoc', require: false
