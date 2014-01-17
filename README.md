@@ -1,9 +1,9 @@
 ##Credit:
+CSS Framework: http://foundation.zurb.com
 
+Background Image from http://unsplash.com
 
-Background Image from http://unsplash.com/
-
-Icons: http://fontawesome.io/
+Icons: http://fontawesome.io
 
 Fonts: http://www.google.com/fonts
 ###Homepage
