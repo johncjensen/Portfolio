@@ -24,10 +24,9 @@ a:hover {
 }
 
 body{
-	/**/
 	z-index: 2;
 	font-family: 'OpenSans', sans-serif;
-	background: asset_url('bg-web.jpg') no-repeat center center fixed;
+	background: url('bg-web.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
