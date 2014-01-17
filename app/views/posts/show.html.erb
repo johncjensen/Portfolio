@@ -1,13 +1,13 @@
 <div class="container blog">
 <p id="notice"><%= notice %></p>
 
-<h1>
+<h1 class="post-title">
   <%= @post.title %>
 </h1>
 <p class="blog-body">
   <%= @post.body %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_post_path(@post), :class => "button tiny" %>
+<%= link_to 'Back', posts_path, :class => "button tiny" %>
 </div>

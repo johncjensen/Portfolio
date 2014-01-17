@@ -10,9 +10,24 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
+  <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "John Jensen", root_path, :class => "logotext" %></a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="divider"></li>
+          <li><%= link_to "Blog", posts_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to "About" %></li>
+        </ul>
+      </div>
+    </nav>
 
   <body>
-    <div class="colums large-8">
+    <div class="columns large-10">
       <%= yield %>
     </div>
   </body>

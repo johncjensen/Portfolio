@@ -6,7 +6,7 @@ feature "Editing a post" do
     visit post_path(posts(:ac).id)
     click_on "Edit"
     fill_in "Title", with: posts(:ac).title
-    click_on "Update Post"
+    click_on "Submit"
     page.text.must_include "Post was successfully updated"
     page.text.must_include posts(:ac).title
   end

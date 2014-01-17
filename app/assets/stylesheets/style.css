@@ -115,14 +115,18 @@ header{
 
 .blog {
 	background:white;
-  background:rgba(255,255,255,0.29);
-  padding: 0 30px;
+  background:rgba(255,255,255,0.50);
+  padding:0 30px;
+  padding-bottom: 10px;
 }
 
 .blog-body {
-	font-size: 24px;
-	line-height: 30px;
+/*	font-size: 20px;
+	line-height: 40px;*/
+}
 
+.post-title {
+	padding-top: 10px;
 }
 
 /* iPads (portrait and landscape) ----------- */

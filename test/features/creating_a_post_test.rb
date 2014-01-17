@@ -5,7 +5,7 @@ feature "Creating a post" do
     visit new_post_path
     fill_in "Title", with: posts(:ac).title
     fill_in "Body", with: posts(:ac).body
-    click_on "Create Post"
+    click_on "Submit"
     page.text.must_include "Post was successfully created"
     page.text.must_include posts(:ac).title
   end
