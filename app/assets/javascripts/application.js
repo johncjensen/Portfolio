@@ -15,4 +15,3 @@
 //= require modernizr.custom
 //= require furatto.min
 //= require turbolinks
- */
