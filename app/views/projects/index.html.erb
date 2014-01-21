@@ -8,6 +8,8 @@
       <% end %>
       <h3 class="thumbnail-header"><%= project.name %></h3>
       <span class="thumbnail-description"><%= project.technologies_used %></span>
+      <br>
+      <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %>
     </div>
   </div>
   <% end %>
