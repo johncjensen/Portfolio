@@ -1,9 +1,9 @@
 <div class="container blog">
 <p id="notice"><%= notice %></p>
-
 <h1 class="post-title">
   <%= @post.title %>
 </h1>
+<h6>Posted <%= time_ago_in_words @post.created_at %> ago</h6>
 <p class="blog-body">
   <%= @post.body %>
 </p>
