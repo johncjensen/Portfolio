@@ -1,16 +1,16 @@
 <h1>Stuff I've made or Worked on</h1>
-
-<% @projects.each do |project| %>
-  <div class="project" id="<%= dom_id(project) %>">
-    <h3><%= project.name %></h3>
-    <p><%= project.technologies_used %></p>
-    <div class="nav">
-      <%= link_to 'Show', project %> |
-      <%= link_to 'Edit', edit_project_path(project) %> |
-      <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="row thumbnails-row">
+  <% @projects.each do |project| %>
+  <div class="col-4">
+    <div class="thumbnail">
+      <%= link_to(project) do %>
+      <img src="http://placehold.it/300x250" alt="" class="img img-polaroid" />
+      <% end %>
+      <h3 class="thumbnail-header"><%= project.name %></h3>
+      <span class="thumbnail-description"><%= project.technologies_used %></span>
     </div>
   </div>
-<% end %>
-
+  <% end %>
+</div>
 <br />
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path, :class => "btn" %>

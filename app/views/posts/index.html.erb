@@ -1,14 +1,16 @@
 <table>
-<br>
+  <br>
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><h1><%= link_to post.title, post_path(post) %></h1></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><h3><%= link_to post.title, post_path(post) %></h3></td>
+      <td>&nbsp;</td>
+      <td><%= link_to 'Edit', edit_post_path(post), :class => "btn" %></td>
+      <td>&nbsp;</td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<%= link_to 'New Post', new_post_path, :class => "button" %>
+<%= link_to 'New Post', new_post_path, :class => "btn" %>

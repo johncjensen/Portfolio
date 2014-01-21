@@ -9,31 +9,46 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><%= link_to "John Jensen", root_path, :class => "logotext" %></a></h1>
-      </li>
-    </ul>
-    <section class="top-bar-section">
-      <ul class="right">
-        <li class="divider"></li>
-        <li><%= link_to "Projects", projects_path %></li>
-        <li class="divider"></li>
-        <li><%= link_to "Blog", posts_path %></li>
-        <li class="divider"></li>
-        <li><%= link_to "About" %></li>
-      </ul>
-    </div>
-  </nav>
   <body>
-    <% flash.each do |key, value| %>
-    <div class="alert-box round <%= flash_class(key) %>">
-      <%= value %>
+    <div class="panels ">
+      <div class="panel panel-left">
+      </div>
     </div>
-    <% end %>
-    <div class="columns large-10">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+    <div class="panel-content">
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner docs-navbar-inner">
+          <div class="container">
+            <a href="#menu" class="menu-trigger meteocon" data-meteocon="M" data-toggle="panel" data-target="#menu"></a>
+            <div class="nav-collapse collapse">
+              <nav id="menu">
+                <ul class="nav docs-navbar-menu">
+                  <li><a class="brand" href="/">John Jensen</a></li>
+                  <li class=""><a href="/posts">Posts</a></li>
+                  <li class=""><a href="/projects">Projects</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-content">
+          <% flash.each do |key, value| %>
+          <div class="alert-box round <%= flash_class(key) %>">
+            <%= value %>
+          </div>
+          <% end %>
+          <div id="maincontent">
+            <div class="container-center">
+              <div class="row">
+                <%= yield %>
+              </div>
+            </div>
+          </div>
+          <center>
+          <div class="footer-social">
+            <a href="http://twitter.com/iamjohnjensen" class="fa fa-twitter fa-2x"></a>
+            <a href="http://dribbble.com/johnjensen" class="fa fa-dribbble fa-2x"></a>
+          </div>
+          </center>
+        </div>
+      </body>
+    </html>

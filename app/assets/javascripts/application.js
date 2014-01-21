@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require modernizr.custom
+//= require furatto.min
 //= require turbolinks
-//= require_tree .
-
-$(function(){ $(document).foundation(); });
+ */
