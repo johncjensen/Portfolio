@@ -8,10 +8,7 @@ gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks', '2.2.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'foundation-rails', '~> 5.0.3.1'
 gem 'compass-rails', '~> 1.1.3'
-# gem 'better_errors'
-# gem 'binding_of_caller'
 
 group :development do
   gem 'sqlite3', '1.3.8'
