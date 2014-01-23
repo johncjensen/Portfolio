@@ -1,5 +1,5 @@
 ##Credit:
-CSS Framework: http://foundation.zurb.com
+CSS Framework: http://icalialabs.github.io/furatto/
 
 Background Image from http://unsplash.com
 

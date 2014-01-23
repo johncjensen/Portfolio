@@ -1,13 +1,15 @@
 <div class="blog-info">
-<h1 class="blog-title"><%= @post.title %></h1>
-<h6 class="blog-date">Posted <%= time_ago_in_words @post.created_at %> ago</h6>
-</div>
-<div class="container blog">
-<p id="notice"><%= notice %></p>
-<p class="blog-body">
-  <%= @post.body %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-small" %>
-<%= link_to 'Back', posts_path, :class => "btn btn-small" %>
+  <h1 class="blog-title"><%= @post.title %></h1>
+  <h5 class="blog-date">Posted <%= time_ago_in_words @post.created_at %> ago</h5>
+  <h6 class="blog-author"><%= @post.author.email %></h6>
+  <div class="container blog">
+    <p class="blog-body">
+    <%= @post.body %>
+    </p>
+    <% if current_user.present? %>
+      <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-small" %>
+      <%= link_to 'Back', posts_path, :class => "btn btn-small" %>
+    <% else %>
+    <% end %>
+  </div>
 </div>

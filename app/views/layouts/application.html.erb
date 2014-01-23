@@ -15,6 +15,7 @@
       </div>
     </div>
     <div class="panel-content">
+
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner docs-navbar-inner">
           <div class="container">
@@ -25,30 +26,53 @@
                   <li><a class="brand" href="/">John Jensen</a></li>
                   <li class=""><a href="/posts">Posts</a></li>
                   <li class=""><a href="/projects">Projects</a></li>
+
+                  <% if current_user.present? %>
+                  <li class="dropdown pull-right">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= current_user.email %><b class="caret bottom-up"></b></a>
+                    <ul class="dropdown-menu bottom-up">
+                      <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "fa fa-sign-out" %>
+                    </ul>
+                    <% else %>
+                    <li><%= link_to "Sign up", new_user_registration_path %></li>
+                    <li><%= link_to "Sign in", new_user_session_path %></li>
+                  </li>
+                  <% end %>
                 </ul>
               </div>
             </div>
           </div>
+        </nav>
+      </div>
+
+
+      <div class="panel-content">
+        <% flash.each do |key, value| %>
+        <div class="alert-box round <%= flash_class(key) %>">
+          <%= value %>
         </div>
-        <div class="panel-content">
-          <% flash.each do |key, value| %>
-          <div class="alert-box round <%= flash_class(key) %>">
-            <%= value %>
-          </div>
-          <% end %>
-          <div id="maincontent">
-            <div class="container-center">
-              <div class="row">
-                <%= yield %>
-              </div>
+        <% end %>
+        <div id="maincontent">
+          <div class="container-center">
+            <div class="row">
+              <% if notice.nil? %>
+              <% else %>
+              <div class="alert alert-success"><%= notice %></div>
+              <% end %>
+              <% if alert.nil? %>
+              <% else %>
+              <div class="alert alert-danger"><%= alert %></p></div>
+              <% end %>
+              <%= yield %>
             </div>
           </div>
-          <center>
-          <div class="footer-social">
-            <a href="http://twitter.com/iamjohnjensen" class="fa fa-twitter fa-2x" target="_blank"></a>
-            <a href="http://dribbble.com/johnjensen" class="fa fa-dribbble fa-2x" target="_blank"></a>
-          </div>
-          </center>
         </div>
-      </body>
-    </html>
+        <center>
+        <div class="footer-social">
+          <a href="http://twitter.com/iamjohnjensen" class="fa fa-twitter fa-2x" target="_blank"></a>
+          <a href="http://dribbble.com/johnjensen" class="fa fa-dribbble fa-2x" target="_blank"></a>
+        </div>
+        </center>
+      </div>
+    </body>
+  </html>

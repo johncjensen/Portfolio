@@ -4,13 +4,19 @@
     <% @posts.each do |post| %>
     <tr>
       <td><h3><%= link_to post.title, post_path(post) %></h3></td>
+      <% if current_user.present? %>
       <td>&nbsp;</td>
       <td><%= link_to 'Edit', edit_post_path(post), :class => "btn" %></td>
       <td>&nbsp;</td>
       <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %></td>
+      <% else %>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
 </table>
-<br>
-<%= link_to 'New Post', new_post_path, :class => "btn" %>
+<% if current_user.present? %>
+  <br>
+  <%= link_to 'New Post', new_post_path, :class => "btn" %>
+<% else %>
+<% end %>

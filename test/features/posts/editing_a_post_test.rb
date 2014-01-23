@@ -2,6 +2,12 @@ require "test_helper"
 
 feature "Editing a post" do
   scenario "submit updates to an exiting post" do
+
+    visit new_user_session_path
+    fill_in "Email", with: "batman@gotham.com"
+    fill_in "Password", with: "grapplinghook89"
+    page.find("[type='submit']").click
+
     posts(:ac)
     visit post_path(posts(:ac).id)
     click_on "Edit"

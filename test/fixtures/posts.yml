@@ -1,7 +1,9 @@
 ac:
   title: Awesome Cats
   body: Cats from space taught me web development!
+  author: batman
 
 mb:
   title: More Beer
   body: It's all about the beer
+  author: batman
