@@ -2,6 +2,7 @@
   <h1 class="blog-title"><%= @post.title %></h1>
   <h5 class="blog-date">Posted <%= time_ago_in_words @post.created_at %> ago</h5>
   <h6 class="blog-author"><%= @post.author.email %></h6>
+  <h6 class="blog-post-status">Status: <%= @post.published? ? "Published" : "Unpublished" %></h6>
   <div class="container blog">
     <p class="blog-body">
     <%= @post.body %>

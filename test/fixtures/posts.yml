@@ -2,8 +2,22 @@ ac:
   title: Awesome Cats
   body: Cats from space taught me web development!
   author: batman
+  published: true
 
 mb:
   title: More Beer
   body: It's all about the beer
   author: batman
+  published: true
+
+meow:
+  title: Professor Meowingtons
+  body: I love my daddy deadmau5
+  author: meowingtons
+  published: false
+
+dillon:
+  title: One Deeper
+  body: So I heard about this deep house party do you want to go hansel
+  author: dillonfrancis
+  published: true

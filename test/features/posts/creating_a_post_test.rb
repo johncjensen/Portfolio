@@ -15,7 +15,7 @@ feature "Creating a post" do
   scenario "authors can't publish" do
     sign_in(:author)
     visit new_post_path
-    page.wont_have_field('published')
+    page.wont_have_field('Published')
   end
 
   scenario "editors can publish" do
@@ -25,17 +25,12 @@ feature "Creating a post" do
     fill_in "Title", with: posts(:ac).title
     fill_in "Body", with: posts(:ac).body
     check "Published"
-    click_on "Create Post"
+    click_on "Submit"
     page.text.must_include "Status: Published"
   end
 
   scenario "submit form data to create a new post" do
     sign_in(:author)
-    visit new_user_session_path
-    fill_in "Email", with: "batman@gotham.com"
-    fill_in "Password", with: "grapplinghook89"
-    page.find("[type='submit']").click
-
     visit new_post_path
     fill_in "Title", with: posts(:ac).title
     fill_in "Body", with: posts(:ac).body
@@ -43,7 +38,7 @@ feature "Creating a post" do
     page.text.must_include "Post was successfully created"
     page.text.must_include posts(:ac).title
     page.has_css? ".blog-author"
-    page.text.must_include "batman@gotham.com"
+    page.text.must_include users(:author).email
     page.text.must_include "Status: Unpublished"
   end
 end

@@ -9,10 +9,11 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks', '2.2.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'compass-rails', '~> 1.1.3'
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'devise', '3.2.2', :git => 'git://github.com/plataformatec/devise.git'
+gem 'pundit', '0.2.1'
 
 group :production do
-  gem 'rails_12factor'
+  gem 'rails_12factor', '0.0.2'
   gem 'pg','0.17.1'
 end
 
@@ -21,10 +22,10 @@ group :development, :test do
 end
 
 group :test do
-  gem 'turn'
+  gem 'turn', '0.9.6'
 	gem 'minitest-rails-capybara', '0.10.0'
-  gem 'launchy'
+  gem 'launchy', '2.3.0'
 end
 group :doc do
-  gem 'sdoc', require: false
+  gem 'sdoc', '0.4.0', require: false
 end

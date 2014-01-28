@@ -9,7 +9,7 @@ feature "Deleting a post" do
     page.find("[type='submit']").click
 
     visit posts_path
-    shit = posts(:ac).title
+    shit = posts(:meow).title
     first(:link, 'Destroy').click
     page.wont_have_content shit
   end
