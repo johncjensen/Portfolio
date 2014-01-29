@@ -16,6 +16,7 @@ feature "Creating a post" do
     sign_in(:author)
     visit new_post_path
     page.wont_have_field('Published')
+    visit edit_post_path(posts(:ac))
   end
 
   scenario "editors can publish" do

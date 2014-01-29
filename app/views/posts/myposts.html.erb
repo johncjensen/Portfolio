@@ -1,3 +1,4 @@
+<h2><%= current_user.email %>'s posts</h2>
 <table>
   <br>
   <tbody>
@@ -16,9 +17,7 @@
   </tbody>
 </table>
 <% if current_user.present? %>
-  <br>
-  <%= link_to 'New Post', new_post_path, :class => "btn" %>
-  <%= link_to 'Show My Posts', myposts_path, :class => "btn btn-primary" %>
-
+<br>
+<%= link_to 'New Post', new_post_path, :class => "btn" %>
 <% else %>
 <% end %>

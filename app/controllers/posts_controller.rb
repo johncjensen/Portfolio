@@ -6,6 +6,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def myposts
+    @posts = current_user.posts
+  end
+
   def show
   end
 
