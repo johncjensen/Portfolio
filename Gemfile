@@ -22,10 +22,12 @@ group :development, :test do
 end
 
 group :test do
+  gem 'simplecov'
   gem 'turn', '0.9.6'
 	gem 'minitest-rails-capybara', '0.10.0'
   gem 'launchy', '2.3.0'
 end
+
 group :doc do
   gem 'sdoc', '0.4.0', require: false
 end
