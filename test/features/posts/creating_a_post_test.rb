@@ -23,10 +23,11 @@ feature "Creating a post" do
     sign_in(:editor)
     visit new_post_path
     page.must_have_field('Published')
-    fill_in "Title", with: posts(:ac).title
-    fill_in "Body", with: posts(:ac).body
+    fill_in "Title", with: "Awesome tutorial on publishing great content"
+    fill_in "Body", with: "here is your new way of publishing great things on the internet"
     check "Published"
     click_on "Submit"
+    save_and_open_page
     page.text.must_include "Status: Published"
   end
 

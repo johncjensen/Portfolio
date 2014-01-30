@@ -8,9 +8,25 @@
     <%= @post.body %>
     </p>
     <% if current_user.present? %>
-      <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-small" %>
-      <%= link_to 'Back', posts_path, :class => "btn btn-small" %>
+    <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-small" %>
+    <%= link_to 'Back', posts_path, :class => "btn btn-small" %>
     <% else %>
     <% end %>
   </div>
 </div>
+
+
+<table>
+  <br>
+  <tbody>
+    <% @comments.reverse.each do |comment| %>
+    <tr>
+      <td><h3><%= comment.content %></h3></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<%= render 'comments/comments' %>

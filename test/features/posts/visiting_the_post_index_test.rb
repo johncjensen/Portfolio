@@ -15,7 +15,6 @@ feature "Visiting the Post" do
     click_on "Show My Posts"
     page.text.must_include posts(:ac).title
     page.text.must_include posts(:mb).title
-    save_and_open_page
   end
 
 end

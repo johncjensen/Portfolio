@@ -1,19 +1,19 @@
 batman:
   email: batman@gotham.com
   encrypted_password: <%= User.new.send(:password_digest, 'grapplinghook89') %>
-  role: author
+  role: Author
 
 robin:
   email: robin@gotham.com
   encrypted_password: <%= User.new.send(:password_digest, 'poisongas2!') %>
-  role: author
+  role: Author
 
 author:
   email: author@gotham.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  role: author
+  role: Author
 
 editor:
   email: editor@gotham.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  role: editor
+  role: Editor

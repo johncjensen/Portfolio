@@ -10,7 +10,12 @@ gem 'turbolinks', '2.2.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'compass-rails', '~> 1.1.3'
 gem 'devise', '3.2.2', :git => 'git://github.com/plataformatec/devise.git'
+gem 'omniauth-twitter', '~> 1.0.1'
 gem 'pundit', '0.2.1'
+gem 'figaro', '0.7.0'
+gem 'better_errors'
+gem 'binding_of_caller'
+
 
 group :production do
   gem 'rails_12factor', '0.0.2'
