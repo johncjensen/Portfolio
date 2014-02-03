@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  after_filter :verify_authorized, :except => [:index, :show]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index

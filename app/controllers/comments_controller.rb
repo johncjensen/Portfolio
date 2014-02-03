@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
+    # @post.comments.build(comment_params)
     @comment = @post.comments.create(comment_params)
 
     respond_to do |format|

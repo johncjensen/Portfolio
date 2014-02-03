@@ -12,7 +12,7 @@ feature "Visiting the Post" do
     fill_in "Password", with: "grapplinghook89"
     page.find("[type='submit']").click
     visit posts_path
-    click_on "Show My Posts"
+    click_on "My Posts"
     page.text.must_include posts(:ac).title
     page.text.must_include posts(:mb).title
   end

@@ -5,6 +5,14 @@ class User < ActiveRecord::Base
 
   has_many :posts, foreign_key: "author_id"
 
+  def author?
+    role == 'author'
+  end
+
+  def editor?
+    role == 'editor'
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider

@@ -23,6 +23,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'ffaker', '1.22.1'
   gem 'sqlite3', '1.3.8'
 end
 

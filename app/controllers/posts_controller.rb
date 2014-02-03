@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
+  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = policy_scope(Post)
   end
 
   def myposts
