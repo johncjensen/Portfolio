@@ -16,4 +16,8 @@
 
 
 <%= render 'comments/comments' %>
+<% if current_user.role == "editor" %>
+<%= render :partial => 'comments/admin_list', :locals => { :comment => @comment } %>
+<% else %>
 <%= render 'comments/list' %>
+<% end %>

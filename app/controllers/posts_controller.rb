@@ -13,7 +13,8 @@ class PostsController < ApplicationController
 
   def show
     @comment = @post.comments.build
-    @comments = Comment.all
+    @comments = Comment.where(approved: true)
+    @admincomments = Comment.where(approved: false).where(post_id: [set_post])
   end
 
   def new

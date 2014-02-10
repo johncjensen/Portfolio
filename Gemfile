@@ -15,6 +15,7 @@ gem 'pundit', '0.2.1'
 gem 'figaro', '0.7.0'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'quiet_assets'
 
 
 group :production do
