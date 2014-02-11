@@ -11,14 +11,12 @@
     <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-small" %>
     <% end %>
     <%= link_to 'Back', posts_path, :class => "btn btn-small" %>
+    <%= render 'comments/comments' %>
+    <% if current_user && current_user.role == "editor" %>
+    <%= render :partial => 'comments/admin_list', :locals => { :comment => @comment } %>
+    <%= render 'comments/list' %>
+    <% else %>
+    <%= render 'comments/list' %>
+    <% end %>
   </div>
 </div>
-
-
-<%= render 'comments/comments' %>
-<% if current_user && current_user.role == "editor" %>
-<%= render :partial => 'comments/admin_list', :locals => { :comment => @comment } %>
-<%= render 'comments/list' %>
-<% else %>
-<%= render 'comments/list' %>
-<% end %>

@@ -1,0 +1,5 @@
+$('#edit_<%= dom_id(@post) %>').remove();
+$('#edit_button_<%= dom_id(@post) %>').show();
+$('#<%= dom_id(@post) %>').replaceWith('<%= j render(@post) %>');
+
+

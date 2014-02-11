@@ -1,0 +1,9 @@
+<ul id="<%= dom_id(post) %>">
+  <li><h3><%= link_to post.title, post_path(post) %></h3></li>
+  <% if policy(post).update? %>
+  <li><%= link_to 'Edit', edit_post_path(post), :class => "btn", id: "edit_button_#{dom_id(post)}", remote: true %></li>
+  <% end %>
+  <% if policy(post).destroy? %>
+  <li><%= link_to 'Destroy', post, id: "delete_#{dom_id(post)}", method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn", remote: true %></li>
+  <% end %>
+</ul>
