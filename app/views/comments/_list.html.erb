@@ -1,11 +1,16 @@
+<% if @comments.blank? %>
+<em>Be the first to leave a comment</em>
+<% else %>
 <h3>Comments</h3>
 <br>
 <ul>
   <% @comments.each do |comment| %>
-  <li style="color:white;">Author: <%= comment.author %></li>
-  <li style="color:white;">Url: <%= comment.author_url %></li>
-  <li style="color:white;">Content: <%= comment.content %></li>
+  <li>Author: <%= comment.author %></li>
+  <li>Url: <%= comment.author_url %></li>
+  <li>Content: <%= comment.content %></li>
+  <li>Post ID: <%= comment.post_id %></li>
   <br>
   <br>
   <% end %>
 </ul>
+<% end %>

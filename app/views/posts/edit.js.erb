@@ -1,0 +1,4 @@
+$('#delete_<%= dom_id(@post) %>').hide()
+$('#edit_button_<%= dom_id(@post) %>').hide().after('<%= j render("form") %>');
+
+

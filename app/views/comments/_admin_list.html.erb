@@ -4,11 +4,11 @@
   <tbody>
     <% @admincomments.each do |comment| %>
     <tr>
-      <td style="color:white;"><p>Post id: <%= comment.post_id %></p></td>
+      <td><p>Post id: <%= comment.post_id %></p></td>
       <td>&nbsp;&nbsp;&nbsp;</td>
-      <td style="color:white;"><p><%= comment.content %></p></td>
-      <td style="color:white;"><p><%= comment.author_url %></p></td>
-      <td style="color:white;"><p>Approved: <%= comment.approved %></p></td>
+      <td><p><%= comment.content %></p></td>
+      <td><p><%= comment.author_url %></p></td>
+      <td><p>Approved: <%= comment.approved %></p></td>
       <td><%= form_for [@post, comment] do |f| %>
       <%= f.hidden_field :approved, value: true %>
       <%= f.submit 'Approve', :class => "btn btn-success" %>
