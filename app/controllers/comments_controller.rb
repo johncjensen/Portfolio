@@ -3,9 +3,9 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    # @post.comments.build(comment_params)
     @comment = @post.comments.create(comment_params)
-
+    @comment.author = current_user.name
+    @comment.author_email = current_user.email
     respond_to do |format|
       if @comment.save
         format.html { redirect_to [@post], notice: 'Comment was successfully submitted. It will not appear until approved.' }
@@ -13,6 +13,18 @@ class CommentsController < ApplicationController
 
       else
         format.html { render action: 'new' }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @comment.update(comment_params)
+        format.html { redirect_to :back, notice: 'Comment was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -29,6 +41,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:content, :approved)
+      params.require(:comment).permit(:content, :approved, :author_url)
     end
 end

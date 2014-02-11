@@ -1,4 +1,4 @@
-<h3>Comments</h3>
+<h3>Comments Pending Approval</h3>
 <table>
   <br>
   <tbody>
@@ -9,7 +9,7 @@
       <td style="color:white;"><p><%= comment.content %></p></td>
       <td style="color:white;"><p><%= comment.author_url %></p></td>
       <td style="color:white;"><p>Approved: <%= comment.approved %></p></td>
-      <td><%= form_for ([@post, @comment]) do |f| %>
+      <td><%= form_for [@post, comment] do |f| %>
       <%= f.hidden_field :approved, value: true %>
       <%= f.submit 'Approve', :class => "btn btn-success" %>
       <% end %>

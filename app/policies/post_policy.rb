@@ -7,12 +7,12 @@ class PostPolicy < ApplicationPolicy
 
   class Scope < Struct.new(:user, :scope)
     def resolve
-      if user.present? && user.editor?
-        scope.all
-      elsif user.present? && user.author?
-        scope.where(author_id: user.id)
-      else
+      if user == nil
         scope.where(published: true)
+      elsif user.author?
+        scope.where(author.id == user.id)
+      else user.editor?
+        scope.all
       end
     end
   end
