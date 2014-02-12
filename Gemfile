@@ -16,6 +16,8 @@ gem 'figaro', '0.7.0'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'quiet_assets'
+gem 'kramdown'
+
 
 
 group :production do

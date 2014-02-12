@@ -27,7 +27,6 @@ feature "Creating a post" do
     fill_in "Body", with: "here is your new way of publishing great things on the internet"
     check "Published"
     click_on "Submit"
-    save_and_open_page
     page.text.must_include "Status: Published"
   end
 

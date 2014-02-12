@@ -5,7 +5,7 @@
   <h6 class="blog-post-status">Status: <%= @post.published? ? "Published" : "Unpublished" %></h6>
   <div class="container blog">
     <p class="blog-body">
-    <%= @post.body %>
+    <%= markdown_filter @post.body %>
     </p>
     <% if policy(@post).update? %>
     <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-small" %>
