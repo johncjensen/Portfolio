@@ -1,6 +1,6 @@
 <div class="blog-info">
   <h1 class="blog-title"><%= @post.title %></h1>
-  <h5 class="blog-date">Posted <%= time_ago_in_words @post.created_at %> ago</h5>
+  <h5 class="blog-date">Posted <%= @post.created_at.strftime("%A, %b %d @ %I %p") %></h5>
   <h6 class="blog-author"><%= @post.author.name %></h6>
   <h6 class="blog-post-status">Status: <%= @post.published? ? "Published" : "Unpublished" %></h6>
   <div class="container blog">
