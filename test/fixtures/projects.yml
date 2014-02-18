@@ -1,7 +1,9 @@
 otb:
   name: Only The Beat
   technologies_used: Wordpress
+  published: true
 
 usc:
   name: USC Events
   technologies_used: Joomla
+  published: true

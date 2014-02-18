@@ -4,4 +4,12 @@ cm1:
   author_email: spider@man.com
   content: Googlie google is feeling lucky
   approved: true
-  commentable: usc (Project)
+  commentable: ac (Post)
+
+cm2:
+  author: project
+  author_url: http://dope.com
+  author_email: project@thinngy.com
+  content: Seriously another css framework?
+  approved: true
+  commentable: otb (Project)
