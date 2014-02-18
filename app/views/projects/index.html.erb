@@ -1,18 +1,8 @@
 <h1>Projects</h1>
 <div class="row thumbnails-row">
-  <% @projects.each do |project| %>
-  <div class="col-4">
-    <div class="thumbnail">
-      <%= link_to(project) do %>
-      <img src="http://placehold.it/300x250" alt="" class="img img-polaroid" />
-      <% end %>
-      <h3 class="thumbnail-header"><%= project.name %></h3>
-      <span class="thumbnail-description"><%= project.technologies_used %></span>
-      <br>
-      <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %>
-    </div>
-  </div>
-  <% end %>
+  <%= render @projects %>
 </div>
 <br />
+<% if policy(@projects).create? %>
 <%= link_to 'New Project', new_project_path, :class => "btn" %>
+<% end %>

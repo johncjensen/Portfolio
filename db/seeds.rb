@@ -10,8 +10,6 @@ editor = User.create(email: "editor@example.com", role: "editor", password: "pas
 
 author = User.create(email: "author@example.com", role: "author", password: "password1", password_confirmation: "password1")
 
-
-
 # require 'ffaker'
 
 # 100.times do

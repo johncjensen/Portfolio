@@ -1,20 +1,14 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :load_commentable
 
   def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
-    @comment.author = current_user.name
-    @comment.author_email = current_user.email
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to [@post], notice: 'Comment was successfully submitted. It will not appear until approved.' }
-        format.json { render action: 'show', status: :created, location: @comment }
-
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    @comment = @commentable.comments.new(comment_params)
+    if @comment.save
+      redirect_to @commentable, notice: "Comment is awaiting moderation"
+    else
+      instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
+      render template: "#{@resource}/show"
     end
   end
 
@@ -36,11 +30,16 @@ class CommentsController < ApplicationController
 
   private
 
+    def load_commentable
+      @resource, id = request.path.split('/')[1,2]
+      @commentable = @resource.singularize.classify.constantize.find(id)
+    end
+
     def set_comment
       @comment = Comment.find(params[:id])
     end
 
     def comment_params
-      params.require(:comment).permit(:content, :approved, :author_url)
+      params.require(:comment).permit(:author, :author_url, :author_email, :content, :referrer, :approved)
     end
 end

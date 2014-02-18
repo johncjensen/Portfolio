@@ -1,9 +1,10 @@
 class ProjectsController < ApplicationController
-  after_filter :verify_authorized, :except => [:index, :show]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @projects = Project.all
+    # @projects = Project.all
+    @projects = policy_scope(Project)
   end
 
   def new
@@ -20,6 +21,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    authorize @project
+    @commentable = @project
+    @comments = @commentable.comments.where(approved: true)
+    @admincomments = @commentable.comments.where(approved: false)
+    @comment = Comment.new
   end
 
   def edit
@@ -47,7 +53,11 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  # def project_params
+  #   params.require(:project).permit(:name, :technologies_used, :approved)
+  # end
+
   def project_params
-    params.require(:project).permit(:name, :technologies_used)
+    params.require(:project).permit(:name, :technologies_used, (:published if ProjectPolicy.new(current_user, @project).publish?))
   end
 end

@@ -1,2 +1,11 @@
 <h2><%= @project.name %></h2>
 <p>Technologies used: <%= @project.technologies_used %></p>
+
+
+<%= render 'comments/comments' %>
+<% if current_user && current_user.role == "editor" %>
+<%= render :partial => 'comments/admin_list', :locals => { :comment => @comment } %>
+<%= render 'comments/list' %>
+<% else %>
+<%= render 'comments/list' %>
+<% end %>

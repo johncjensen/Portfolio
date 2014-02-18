@@ -11,9 +11,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comment = @post.comments.build
-    @comments = Comment.where(approved: true).where(post_id: [set_post])
-    @admincomments = Comment.where(approved: false).where(post_id: [set_post])
+    authorize @post
+    @commentable = @post
+    @comments = @commentable.comments.where(approved: true)
+    @admincomments = @commentable.comments.where(approved: false)
+    @comment = Comment.new
   end
 
   def new

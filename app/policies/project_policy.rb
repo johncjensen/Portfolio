@@ -1,8 +1,8 @@
-class PostPolicy < ApplicationPolicy
+class ProjectPolicy < ApplicationPolicy
 
-  def initialize(user, post)
+  def initialize(user, project)
     @user = user
-    @post = post
+    @project = project
   end
 
   class Scope < Struct.new(:user, :scope)
@@ -25,14 +25,14 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    if @user
+   if @user
       @user.role == "editor" || @user.role == "author"
     end
   end
 
   def show?
     if @user.nil? || @user.role.nil?
-      @post.published?
+      @project.published?
     else
       @user.role == "editor" || @user.role == "author"
     end

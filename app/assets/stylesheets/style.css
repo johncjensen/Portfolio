@@ -19,7 +19,11 @@ a:hover {
 	color: #BDC3C7;
 }
 
-.posts li {
+ul {
+	margin-left: 0;
+}
+
+li {
 	list-style: none;
 }
 
@@ -30,11 +34,11 @@ a:hover {
 .panel-content{
 	z-index: 2;
 	font-family: 'OpenSans', sans-serif;
-	background: url('bg-web.jpg') no-repeat center center fixed;
+/*	background: url('bg-web.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover;*/
 	background-color: #fff;
 	color: #38343E;
 }
