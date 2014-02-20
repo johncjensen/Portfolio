@@ -1,7 +1,8 @@
 <div class="col-4">
   <div class="thumbnail">
     <%= link_to(project) do %>
-    <img src="http://placehold.it/300x250" alt="" class="img img-polaroid" />
+    <%= image_tag project.image_url(:thumb).to_s, class: "img img-polaroid" %>
+    <!-- <img src="http://placehold.it/300x250" alt="" class="img img-polaroid" /> -->
     <% end %>
     <h3 class="thumbnail-header"><%= project.name %></h3>
     <span class="thumbnail-description"><%= project.technologies_used %></span>

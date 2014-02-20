@@ -19,6 +19,9 @@ gem 'quiet_assets'
 gem 'kramdown'
 gem 'browser-timezone-rails'
 gem 'pry-rails'
+gem 'carrierwave'
+gem 'rmagick', '2.13.2'
+gem 'fog'
 
 
 

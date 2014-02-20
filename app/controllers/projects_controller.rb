@@ -58,6 +58,6 @@ class ProjectsController < ApplicationController
   # end
 
   def project_params
-    params.require(:project).permit(:name, :technologies_used, (:published if ProjectPolicy.new(current_user, @project).publish?))
+    params.require(:project).permit(:name, :technologies_used, :image, :remote_image_url, (:published if ProjectPolicy.new(current_user, @project).publish?))
   end
 end
