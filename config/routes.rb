@@ -11,4 +11,7 @@ Portfolio::Application.routes.draw do
   end
 
   get 'myposts', to: 'posts#myposts'
+
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact_create', :via => :post
 end
